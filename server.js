@@ -21,7 +21,7 @@ app.use(express.static('website'));
 
 
 // Setup Server
-const port = 3000;
+const port = process.env.PORT || 3000;
 const server = app.listen(port, ()=>{console.log(`Running on localhost: ${port}`)})
 
 //Routes
@@ -29,11 +29,15 @@ app.get('/all', (req,res) =>{
     res.send(projectData)
 });
 
-app.post('/add', (req,res) => {
+let data = [];
+app.post('/addData', (req,res) => {
     projectData = {
         temp: req.body.temp,
         date: req.body.date,
         userRes: req.body.userRes
     };
-    res.send(projectData);
+    data.push(projectData);
+    console.log(data);
+    // res.send(projectData);
+    // console.log(projectData);
 });
