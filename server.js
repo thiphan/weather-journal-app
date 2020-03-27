@@ -25,19 +25,16 @@ const port = process.env.PORT || 3000;
 const server = app.listen(port, ()=>{console.log(`Running on localhost: ${port}`)})
 
 //Routes
-app.get('/all', (req,res) =>{
-    res.send(projectData)
+app.get('/get', (req,res) =>{
+    res.send(projectData);
 });
 
-app.post('/addData', (req,res) => {
+app.post('/add', (req,res) => {
     console.log(req.body);
     projectData = {
         temp: req.body.temp,
         date: req.body.date,
-        userRes: req.body.userRes
+        userRes: req.body.feeling
     };
-    // console.log(savedData);
-    res.send(projectData);
-    
-    // console.log(projectData);
+    res.send({mgs: "data received!"});
 });

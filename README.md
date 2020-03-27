@@ -8,7 +8,7 @@ NodeJS, Express, JavaScript, HTML, CSS.
 
 ## Instructions
 ### Dependencies
-express, body-parser, Cors.
+express, body-parser, cors.
 To install dependencies: $npm i {package name}
 
 ### Web API
