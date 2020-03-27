@@ -29,15 +29,15 @@ app.get('/all', (req,res) =>{
     res.send(projectData)
 });
 
-let data = [];
 app.post('/addData', (req,res) => {
+    console.log(req.body);
     projectData = {
         temp: req.body.temp,
         date: req.body.date,
         userRes: req.body.userRes
     };
-    data.push(projectData);
-    console.log(data);
-    // res.send(projectData);
+    // console.log(savedData);
+    res.send(projectData);
+    
     // console.log(projectData);
 });

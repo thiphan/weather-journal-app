@@ -18,22 +18,25 @@ document.getElementById('generate').addEventListener('click', performAction);
 function performAction(e){
     //const inputZipCode = 38017;
     const inputZipCode =  document.getElementById('zip').value;
-    //const inputUserRes =  document.getElementById('feeling').value;
+    const inputUserRes =  document.getElementById('feelings').value;
 
-    getAnimal(baseURL,inputZipCode, apiKey);
-    
-    //postData(); with feeling
-}
+    getAnimal(baseURL,inputZipCode, apiKey).then (function(data){
+        //console.log(data, )
+        // const testData = {temp: data.main.temp, date: newDate, userRes: inputUserRes};
+        // console.log(testData);
+        postData('/addData', {temp: `${data.main.temp}F`, date: newDate, userRes: inputUserRes})
+    });
+};
 
 const getAnimal = async (baseURL,zipCode,key)=>{
     const res = await fetch(baseURL+zipCode+',us&units=imperial&appid='+key)
     
     try {
         const data = await res.json();
-        console.log(data)
-        const requiredData = data.main.temp;
-        console.log(requiredData);
-        
+        //console.log(data)
+        //const requiredData = data.main.temp;
+        //console.log(requiredData);
+        return data;
     }  catch(error) {
         console.log("error", error);
         // appropriately handle the error
