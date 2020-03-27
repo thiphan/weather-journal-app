@@ -34,7 +34,7 @@ app.post('/add', (req,res) => {
     projectData = {
         temp: req.body.temp,
         date: req.body.date,
-        userRes: req.body.feeling
+        userRes: req.body.feel
     };
     res.send({mgs: "data received!"});
 });

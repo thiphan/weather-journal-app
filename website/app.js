@@ -63,11 +63,11 @@ async function performAction(e){
         feel: inputUserRes,
         temp: resultFromApi.main.temp
     };
-    const responseFromServer = await postData("/posting", objToServer);
+    const responseFromServer = await postData("/add", objToServer);
     console.log(responseFromServer);
 
     //get data from server
-    const resultFromServer = await getData("/getting");
+    const resultFromServer = await getData("/get");
     console.log(resultFromServer);
 
     updateUserInterface(resultFromServer);
