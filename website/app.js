@@ -9,7 +9,7 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 //UPDATE UI BY POSTDATA
 const updateUserInterface = data => {
-    document.getElementById("date").textContent = data.date;
+    document.getElementById("date").textContent = `Date: ${data.date}`;
     document.getElementById("content").textContent = `How I feel: ${data.userRes}`;
     document.getElementById("temp").textContent = `The temperature: ${data.temp}F`;
 };

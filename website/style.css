@@ -1,5 +1,5 @@
 body{
-    background: #fffff8;
+    background: #3171e9;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -7,26 +7,42 @@ body{
     display: grid;
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
-    height:100vh;
-    background: #f23557;
+    height: auto;
     color: #f0d43a;
-    justify-content: center;
-    grid-gap: 1em;
+    justify-items: center ;
+    align-items: center;
+    grid-gap: 3%;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
 
 .holder{
-
 }
 
 .entry{
+    display: flex;
+    flex-direction: column;
     background: rgba(59, 74, 107, .4);
+    min-width: 200px ;
+    max-width: 70%;
 }
+
+.feel{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+
+    
+}
+
+
 
 #entryHolder{
-
+    color: #e9d981;
+    font-size: smaller;
+    padding: 20px;
 }
+    
 
 #date{
 
@@ -41,10 +57,11 @@ body{
 }
 
 .headline {
-
+    font-size: 2em;
+    color: #f0d43a;
 }
 .title{
-
+    align-self: center;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -65,14 +82,16 @@ input{
 }
 
 button{
-    width: 400px;
-    height: 100px;
+    width: 200px;
+    height: 70px;
     background: #3b4a6b;
     color: #f0d43a;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
+    margin-top: 5px;
+    align-self: center;
     
 }
 h1{
